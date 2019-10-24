@@ -1,0 +1,57 @@
+{
+  "menu": {
+    "header": "menu",
+    "items": [
+      {
+        "id": 27
+      },
+      {
+        "id": 0,
+        "label": "Label 0"
+      },
+      null,
+      {
+        "id": 93
+      },
+      {
+        "id": 85
+      },
+      {
+        "id": 54
+      },
+      null,
+      {
+        "id": 46,
+        "label": "Label 46"
+      }
+    ]
+  }
+}
+
+initialize a sum variable
+param test if its an {}
+iterate if defined
+return 0 or null
+check key value of {}
+check type of value
+value is of type []
+iterate over the []
+check elements of []
+for key value
+key of label
+check for a key of id
+assign value of the id key to sum
+if i encounter another nested menu
+recurse nested menu to add to sum
+{} or []
+recurse over the function and add the sum to the sum
+return sum
+
+write general game plan whiteboard
+read
+examples -  3 4
+ioce questions
+how long to decide the problem
+what are the constraints time ? space ? complexity ?
+keep interviewer engaged
+

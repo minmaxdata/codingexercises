@@ -1,0 +1,27 @@
+{
+  "name": "codings",
+  "version": "1.0.0",
+  "description": "coding exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minmaxdata/codingexercises.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "minmaxdata",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minmaxdata/codingexercises/issues"
+  },
+  "homepage": "https://github.com/minmaxdata/codingexercises#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-plugin-react": "^7.16.0"
+  }
+}
