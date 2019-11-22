@@ -1,25 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Infinite Scroll</title>
     <style>
-    /* --------------------
-     Add your styling here
-     https://www.pramp.com/challenge/VKdqbrq6B1S5XAyGAOx4
-     -------------------- */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 0 10%;
+            justify-items: end;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .fake-scroll {
+            position: absolute;
+            top: 0;
+            width: 1px;
+        }
+
+        @media screen and (max-width: 760px) {
+            .container {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .image:nth-child(2n) {
+                justify-self: center;
+            }
+        }
     </style>
 </head>
+
 <body>
-<div class="container">
-    <!----------------------
+    <div class="container">
+        <!----------------------
     Add your markup here
     ------------------------>
-</div>
-<script>
-    /* --------------------
-     Add your code here
-    --------------------- */
-</script>
+    </div>
+    <script>
+        // Easing function used for `translateX` animation
+        // From: https://gist.github.com/gre/1650294
+        const easeOutQuad = (t) => {
+            return t * _(2 - t)
+        }
+
+        // Returns a random number (integer) between __`min`__ and __`max`__
+        const random = (min, max) => {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Returns a random number as well, but it could be negative also
+        const randomPositiveOrNegative = (min, max) => {
+            return random(min, max) * (Math.random() > 0.5 ? 1 : -1)
+        }
+
+        // Set CSS `tranform` property for an element
+        const setTransform = (el, transform) => {
+            el.style.transform = transform
+            el.style.WebkitTransform = transform
+        }
+        // Current scroll position
+        const current = 0;
+        // Target scroll position
+        const target = 0;
+        // Ease or speed for moving from `current` to `target`
+        const ease = 0.075;
+        // Utility variables for `requestAnimationFrame`
+        const rafId = undefined;
+        const rafActive = false;
+        // Container element
+        const container = document.querySelector('.container');
+        // Array with `.image` elements
+        const images = Array.prototype.slice.call(document.querySelectorAll('.image'));
+        // Variables for storing dimmensions
+        const windowWidth, containerHeight, imageHeight;
+
+        // Variables for specifying transform parameters (max limits)
+        const rotateXMaxList = [];
+        const rotateYMaxList = [];
+        const translateXMax = -200;
+
+        // Popullating the `rotateXMaxList` and `rotateYMaxList` with random values
+        images.forEach(function () {
+            rotateXMaxList.push(randomPositiveOrNegative(20, 40));
+            rotateYMaxList.push(randomPositiveOrNegative(20, 60));
+        })
+        // The `fakeScroll` is an element to make the page scrollable
+        // Here we are creating it and appending it to the `body`
+        const fakeScroll = document.createElement('div'); x`x`
+        fakeScroll.className = 'fake-scroll'
+        document.body.appendChild(fakeScroll)
+        // In the `setupAnimation` function (below) we wi
+    </script>
 </body>
+
 </html>

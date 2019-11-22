@@ -8,18 +8,14 @@
 };
  */
 var singleNumber = function (nums) {
-  const obj = nums.reduce((acc, num) => {
-    if (acc[num]) {
-      acc[num] = acc[num] + 1
-    } else {
-      acc[num] = 1;
-    }
-    return acc;
-  }, {});
-  for (let [k, v] of Object.entries(obj)) {
-    if (v === 1) {
-      return k;
-    }
+  const map = {};
+  for (let n of nums) {
+    if (map[n] == null) map[n] = 0;
+    map[n]++;
+  }
+
+  for (let n in map) {
+    if (map[n] === 1) return Number(n);
   }
 };
 let result = singleNumber([4, 1, 2, 1, 2]);

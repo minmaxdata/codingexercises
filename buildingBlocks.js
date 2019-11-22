@@ -29,13 +29,13 @@ function sumCubes(numbers) {
     return total;
 }
 
-function sumCubes(numbers) {
-    var total = 0;
-    for (var i = 0; i < numbers.length; i++) {
-        total = total + cube(numbers[i]);
-    }
-    return total;
-}
+// function sumCubes(numbers) {
+//     var total = 0;
+//     for (var i = 0; i < numbers.length; i++) {
+//         total = total + cube(numbers[i]);
+//     }
+//     return total;
+// }
 function each(array, func) {
     for (var i = 0; i < array.length; i++) {
         func(array[i]);
@@ -51,13 +51,13 @@ function sumSquares(numbers) {
 }
 
 console.log(sumSquares(nums));
-function sumCubes(numbers) {
-    var total = 0;
-    each(numbers, function (num) {
-        total += cube(num);
-    })
-    return total;
-}
+// function sumCubes(numbers) {
+//     var total = 0;
+//     each(numbers, function (num) {
+//         total += cube(num);
+//     })
+//     return total;
+// }
 console.log(sumCubes(nums));
 function productsums(arr) {
     let total = 1;
@@ -166,3 +166,10 @@ console.log('map:', map([1, 2, 3, 4], function (x) {
     return x * 2;
 }));
 // => [2, 4, 6, 8]
+
+let i = 0;
+for (; i < 10; i++) {
+
+}
+let x = i;
+console.log({ x });
