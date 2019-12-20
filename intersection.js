@@ -3,26 +3,19 @@
  * @param {number[]} nums2
  * @return {number[]}
  */
-var intersect = function (nums1, nums2) {
-  let solution = [];
-  if (nums1.length < nums2.length) {
-    return intersect(nums2, nums1);
-  }
-  const obj = nums1.reduce((acc, num) => {
-    acc[num] = acc[num] + 1 || 1;
-    return acc;
-  }, {});
-  for (let i = 0; i < nums2.length; i++) {
-    if (obj[nums2[i]] !== undefined && obj[nums2[i]] > 0) {
-      obj[nums2[i]] = obj[nums2[i]] - 1;
-      solution.push(nums2[i]);
+var intersection = function (nums1, nums2) {
+  const firstSet = new Set(nums1);
+
+  const result = new Set();
+  for (let num of nums2) {
+    if (firstSet.has(num)) {
+      result.add(num);
     }
   }
 
-  return solution;
-};
+  return Array.from(result);
 
-let result = intersect([4, 9, 5, 4, 4], [4, 9, 5]);
-console.log(result);
-result = intersect([1, 1], [1, 2]);
-console.log(result);
+
+};
+const result = intersection([4, 9, 5], [9, 4, 9, 8, 4]);
+console.log(result)
