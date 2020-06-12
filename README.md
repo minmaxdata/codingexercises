@@ -1,2 +1,2 @@
 # codingexercises
-coding exercises mostly js
+coding exercises mostly leet code  js

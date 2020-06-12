@@ -46,11 +46,11 @@ const grep = (haystack, needle) => {
   let haystackHash = hash(haystack.substring(0, needle.length));
 
   if (needleHash === haystackHash) {
-    result.push(0)
+    result.push(0);
   }
   for (let i = needle.length; i < haystack.length; i++) {
-    console.log(i, haystackHash)
-    haystackHash -= haystack.charCodeAt(i - (needle.length));
+    console.log(i, haystackHash);
+    haystackHash -= haystack.charCodeAt(i - needle.length);
     haystackHash = haystackHash / 256;
     haystackHash += haystack.charCodeAt(i) * Math.pow(256, needle.length - 1);
     if (haystackHash === needleHash) {
@@ -59,7 +59,7 @@ const grep = (haystack, needle) => {
   }
 
   return result;
-}
+};
 
 function hash(value) {
   if (value === null) {
@@ -75,4 +75,4 @@ const haystack = "aaaabcbbbcccccddddabcbgtre";
 const needle = "abc";
 let result = grep(haystack, needle);
 console.log(result);
-console.log(hash('aa'));
+console.log(hash("aa"));
